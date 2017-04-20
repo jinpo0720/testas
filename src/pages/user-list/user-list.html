@@ -1,0 +1,86 @@
+<!--
+  Generated template for the UserList page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>客户列表</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+<!--<ion-list *ngFor="let user of userList">
+<ion-item>{{user.username}},{{user.age}}</ion-item>
+</ion-list>-->
+<button ion-button icon-left (click)="sortList('up')">
+  <ion-icon name="md-arrow-round-up"></ion-icon>
+  升序
+</button>
+
+<!-- Float the icon right -->
+<button ion-button icon-right (click)="sortList('down')">
+  降序
+  <ion-icon name="md-arrow-round-down"></ion-icon>
+</button>
+
+<button ion-button icon-left (click)="sortList('random')">
+  <ion-icon name="md-barcode"></ion-icon>
+  打乱
+</button>
+<ion-card *ngFor="let user of userList">
+
+  <ion-item>
+    <ion-avatar item-left>
+      <img src="{{user.src}}">
+    </ion-avatar>
+    <h2>{{user.username}}（{{user.phone}}）</h2>
+    <p>{{user.sex}}</p>
+    <p>{{user.email}}</p>
+  </ion-item>
+
+  <ion-row>
+    <ion-col>
+      <button ion-button icon-left clear small>
+        <ion-icon name="thumbs-up"></ion-icon>
+        <div>12 Likes</div>
+      </button>
+    </ion-col>
+    <ion-col>
+      <button ion-button icon-left clear small>
+        <ion-icon name="text"></ion-icon>
+        <div>4 Comments</div>
+      </button>
+    </ion-col>
+    <ion-col center text-center>
+      <ion-note>
+        11h ago
+      </ion-note>
+    </ion-col>
+  </ion-row>
+
+</ion-card>
+
+<!--<ion-card >
+  <ion-item *ngFor="let user of userList">
+     <ion-avatar item-left >
+       <img  src="{{user.src}}"> 
+     </ion-avatar>
+      <h3 style="margin-top:0%">{{user.username}}</h3>
+    <p>{{user.email}}</p>
+     
+  </ion-item>
+   <!--<ion-icon name="football" item-left large></ion-icon>
+  <ion-fab right top>
+    <button ion-fab>
+      <ion-icon name="pin"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-card>-->
+
+</ion-content>
